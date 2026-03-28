@@ -1,6 +1,6 @@
 import { Command } from 'commander';
 import path from 'path';
-import { execa } from 'execa';
+import execa from 'execa';
 import { logger } from '../utils/logger';
 import { projectDetector } from '../detectors';
 import { fileExists, dirExists } from '../utils/file-utils';
@@ -168,11 +168,9 @@ function getDefaultRunCommand(config: Awaited<ReturnType<typeof projectDetector.
     case 'nodejs':
       // Check for common start commands
       if (config.scripts.start) return config.scripts.start;
-      if (config.scripts.dev) return config.scripts.dev;
       return 'npm start';
     case 'python':
       // Look for main.py, app.py, or similar
-      if (config.scripts.run) return config.scripts.run;
       return 'python main.py';
     case 'rust':
       return 'cargo run';

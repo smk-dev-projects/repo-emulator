@@ -1,6 +1,7 @@
 import path from 'path';
 import { readTextFile, fileExists } from '../utils/file-utils';
-import { DetectorResult, BaseDetector, Language } from './index';
+import { DetectorResult, BaseDetector } from './index';
+import { Language } from '../types';
 
 /**
  * Ruby project detector

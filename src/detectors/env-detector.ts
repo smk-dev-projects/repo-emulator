@@ -1,6 +1,8 @@
 import path from 'path';
 import { fileExists, readTextFile, parseEnvFile } from '../utils/file-utils';
-import { DetectorResult, BaseDetector, Language, EnvVarConfig } from './index';
+import { DetectorResult, BaseDetector } from './index';
+import { Language } from '../types';
+import { EnvVarConfig } from '../types';
 
 /**
  * Environment variable detector

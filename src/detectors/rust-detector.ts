@@ -1,6 +1,7 @@
 import path from 'path';
 import { readJsonFile, readTextFile, fileExists } from '../utils/file-utils';
-import { DetectorResult, BaseDetector, Language } from './index';
+import { DetectorResult, BaseDetector } from './index';
+import { Language } from '../types';
 
 interface CargoToml {
   package?: {
@@ -41,15 +42,19 @@ export class RustDetector extends BaseDetector {
 
     if (await fileExists(rustToolchainTomlPath)) {
       const content = await readTextFile(rustToolchainTomlPath);
-      const match = content.match(/channel\s*=\s*"([^"]+)"/);
-      if (match) {
-        version = match[1];
-        confidence = 0.95;
+      if (content) {
+        const match = content.match(/channel\s*=\s*"([^"]+)"/);
+        if (match) {
+          version = match[1];
+          confidence = 0.95;
+        }
       }
     } else if (await fileExists(rustToolchainPath)) {
       const content = await readTextFile(rustToolchainPath);
-      version = content.trim();
-      confidence = 0.95;
+      if (content) {
+        version = content.trim();
+        confidence = 0.95;
+      }
     }
 
     const dependencies: string[] = [];

@@ -67,6 +67,9 @@ export interface CloneOptions {
   skipInstall?: boolean;
   cacheEnabled?: boolean;
   verbose?: boolean;
+  output?: string;
+  docker?: boolean;
+  mcp?: boolean;
 }
 
 export interface RunOptions {

@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs-extra';
-import { execa } from 'execa';
+import execa from 'execa';
 import { DetectedConfig } from '../types';
 import { logger } from '../utils/logger';
 import { commandExists, fileExists } from '../utils/file-utils';

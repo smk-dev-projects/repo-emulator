@@ -8,6 +8,8 @@ export { RuntimeInstaller } from './runtime-installer';
 
 import { DetectedConfig } from '../types';
 import { logger } from '../utils/logger';
+import { DockerEnvCreator } from './docker-creator';
+import { NativeEnvCreator } from './native-creator';
 
 /**
  * Base interface for environment creators

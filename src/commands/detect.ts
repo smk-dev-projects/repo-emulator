@@ -97,7 +97,7 @@ function displayDetectedConfig(config: Awaited<ReturnType<typeof projectDetector
   }
 
   if (config.warnings.length > 0) {
-    logger.step('Warnings', 'yellow');
+    logger.step('Warnings');
     for (const warning of config.warnings) {
       logger.item(warning);
     }

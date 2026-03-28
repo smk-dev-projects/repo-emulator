@@ -1,6 +1,7 @@
 import path from 'path';
 import { readJsonFile, readTextFile, fileExists } from '../utils/file-utils';
-import { DetectorResult, BaseDetector, Language } from './index';
+import { DetectorResult, BaseDetector } from './index';
+import { Language } from '../types';
 
 interface PyprojectToml {
   project?: {
@@ -15,6 +16,7 @@ interface PyprojectToml {
       version?: string;
       dependencies?: Record<string, string>;
       'dev-dependencies'?: Record<string, string>;
+      scripts?: Record<string, string>;
     };
   };
 }

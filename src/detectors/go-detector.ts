@@ -1,6 +1,7 @@
 import path from 'path';
 import { readJsonFile, fileExists } from '../utils/file-utils';
-import { DetectorResult, BaseDetector, Language } from './index';
+import { DetectorResult, BaseDetector } from './index';
+import { Language } from '../types';
 
 interface GoMod {
   module: string;

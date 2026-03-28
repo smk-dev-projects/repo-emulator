@@ -1,24 +1,28 @@
 ```
 # Dependencies
 node_modules/
-
-# Build outputs
-dist/
-build/
-target/
-
-# TypeScript
-*.tsbuildinfo
-*.js.map
-*.d.ts
-
-# Logs
-*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Environment variables
 .env
 .env.local
-*.env.*
+.env.*
+!.env.example
+
+# Build outputs
+dist/
+build/
+coverage/
+.nyc_output/
+.eslintcache
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # IDE
 .vscode/
@@ -30,23 +34,6 @@ target/
 .DS_Store
 Thumbs.db
 
-# Coverage
-coverage/
-htmlcov/
-*.coverage
-
-# Python (if mixed project)
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.venv/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-nosetests.xml
+# TypeScript
+*.tsbuildinfo
 ```

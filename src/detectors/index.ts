@@ -21,8 +21,31 @@ import { PHPDetector } from './php-detector';
 import { DockerDetector } from './docker-detector';
 import { DatabaseDetector } from './database-detector';
 import { EnvDetector } from './env-detector';
-import { DetectedConfig, RuntimeConfig, Language } from '../types';
+import { DetectedConfig, RuntimeConfig, Language, DatabaseConfig, DockerConfig, EnvVarConfig } from '../types';
 import path from 'path';
+
+/**
+ * Base detector result interface
+ */
+export interface DetectorResult {
+  language?: RuntimeConfig;
+  databases?: DatabaseConfig[];
+  docker?: DockerConfig;
+  envVars?: EnvVarConfig;
+  scripts?: DetectedConfig['scripts'];
+  confidence?: number;
+  warnings?: string[];
+}
+
+/**
+ * Abstract base class for all detectors
+ */
+export abstract class BaseDetector {
+  name: string = 'BaseDetector';
+  
+  abstract supportsLanguage(lang: Language): boolean;
+  abstract detect(projectPath: string): Promise<DetectorResult>;
+}
 
 /**
  * Main detector class that orchestrates all individual detectors

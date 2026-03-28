@@ -83,7 +83,7 @@ async function handleMCP(
 async function generateServerTemplate(
   projectPath: string,
   serverName: string,
-  tools: ReturnType<typeof generateMCPConfig> extends Promise<infer T> ? T extends null ? never : T['tools'] : never,
+  tools: Array<{ name: string; description: string; inputSchema?: Record<string, unknown>; filePath?: string; functionName?: string }>,
   language: 'ts' | 'py'
 ): Promise<void> {
   const templateDir = path.join(projectPath, 'mcp-server');
