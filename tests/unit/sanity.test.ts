@@ -9,8 +9,8 @@ describe('Project Structure', () => {
   });
 
   test('project should have valid package.json', () => {
-    const packageJson = require('../package.json');
-    
+    const packageJson = require('../../package.json');
+
     expect(packageJson.name).toBe('repo-emulator');
     expect(packageJson.version).toBeDefined();
     expect(packageJson.license).toBe('MIT');
@@ -18,8 +18,8 @@ describe('Project Structure', () => {
   });
 
   test('project should have required scripts', () => {
-    const packageJson = require('../package.json');
-    
+    const packageJson = require('../../package.json');
+
     expect(packageJson.scripts).toBeDefined();
     expect(packageJson.scripts.test).toContain('jest');
     expect(packageJson.scripts.build).toBe('tsc');
