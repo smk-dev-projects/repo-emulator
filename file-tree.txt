@@ -1,0 +1,74 @@
+repo-emulator/
+├── .github/
+│   └── workflows/
+│       ├── ci.yml
+│       └── publish.yml
+├── docs/
+│   ├── architecture.md
+│   ├── contributing.md
+│   ├── mcp-integration.md
+│   └── security.md
+├── examples/
+│   ├── nodejs-sample/
+│   │   └── README.md
+│   ├── python-sample/
+│   │   └── README.md
+│   └── rust-sample/
+│       └── README.md
+├── src/
+│   ├── commands/
+│   │   ├── clone.ts
+│   │   ├── detect.ts
+│   │   ├── run.ts
+│   │   ├── mcp.ts
+│   │   ├── cache.ts
+│   │   └── config.ts
+│   ├── detectors/
+│   │   ├── index.ts
+│   │   ├── node-detector.ts
+│   │   ├── python-detector.ts
+│   │   ├── rust-detector.ts
+│   │   ├── go-detector.ts
+│   │   ├── ruby-detector.ts
+│   │   ├── php-detector.ts
+│   │   ├── docker-detector.ts
+│   │   ├── database-detector.ts
+│   │   └── env-detector.ts
+│   ├── env-creators/
+│   │   ├── index.ts
+│   │   ├── native-creator.ts
+│   │   ├── docker-creator.ts
+│   │   └── runtime-installer.ts
+│   ├── mcp-generator/
+│   │   ├── index.ts
+│   │   ├── scanner.ts
+│   │   └── config-builder.ts
+│   ├── utils/
+│   │   ├── logger.ts
+│   │   ├── cache-manager.ts
+│   │   ├── git-utils.ts
+│   │   ├── file-utils.ts
+│   │   └── health-check.ts
+│   ├── types/
+│   │   └── index.ts
+│   ├── index.ts
+│   └── cli.ts
+├── tests/
+│   ├── unit/
+│   │   ├── detectors.test.ts
+│   │   ├── env-creators.test.ts
+│   │   └── mcp-generator.test.ts
+│   ├── integration/
+│   │   └── clone-flow.test.ts
+│   └── fixtures/
+│       ├── node-project/
+│       ├── python-project/
+│       └── rust-project/
+├── .eslintrc.json
+├── .prettierrc
+├── .gitignore
+├── jest.config.js
+├── package.json
+├── tsconfig.json
+├── README.md
+└── LICENSE
