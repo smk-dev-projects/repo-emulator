@@ -137,3 +137,41 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# TypeScript
+dist/
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build output
+build/
+
+# Temporary files
+tmp/
+temp/
+
+# Logs
+logs/
+
+# Environment overrides
+.env.local
+.env.*.local
+
+# Package manager locks (keep one based on your choice)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
